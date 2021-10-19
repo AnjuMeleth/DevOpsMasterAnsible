@@ -1,0 +1,8 @@
+---
+- hosts: all
+  become: true
+  vars_files: secret.yml
+  tasks:
+        - name: Prints the value in secret.yml file
+          ansible.builtin.debug:
+            msg: "Value of the key variable passwd is {{ passwd }}"
